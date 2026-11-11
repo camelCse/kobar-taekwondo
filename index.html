@@ -53,8 +53,8 @@
 </head>
 <body class="bg-brand-dark text-slate-100 font-sans antialiased selection:bg-brand-red selection:text-white overflow-x-hidden">
 
-    <!-- 0. TOP ANNOUNCEMENT PORTAL BAR (Ala simpbti.id) -->
-    <div class="bg-gradient-to-r from-brand-burgundy via-brand-red to-brand-burgundy text-white text-xs sm:text-sm font-semibold py-2.5 px-4 text-center tracking-wide border-b border-brand-border/40 shadow-md">
+    <!-- 0. TOP ANNOUNCEMENT PORTAL BAR -->
+    <div class="bg-gradient-to-r from-brand-burgundy via-brand-red to-brand-burgundy text-white text-xs sm:text-sm font-semibold py-2.5 px-4 text-center tracking-wide border-b border-brand-border/40 shadow-md relative z-50">
         <div class="max-w-7xl mx-auto flex items-center justify-center space-x-2">
             <span class="bg-white/20 px-2 py-0.5 rounded text-[11px] uppercase tracking-widest font-bold">INFO RESMI</span>
             <span>Pendaftaran Anggota Baru Dibuka!</span>
@@ -77,10 +77,10 @@
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex items-center space-x-6 font-semibold text-sm tracking-wide text-slate-300">
                 <a href="#beranda" class="hover:text-white hover:bg-brand-card px-3 py-2 rounded-lg transition">Beranda</a>
+                <a href="#galeri" class="hover:text-white hover:bg-brand-card px-3 py-2 rounded-lg transition">Galeri</a>
                 <a href="#program" class="hover:text-white hover:bg-brand-card px-3 py-2 rounded-lg transition">Program</a>
                 <a href="#pelatih" class="hover:text-white hover:bg-brand-card px-3 py-2 rounded-lg transition">Pelatih Utama</a>
                 <a href="#prestasi" class="hover:text-white hover:bg-brand-card px-3 py-2 rounded-lg transition">Prestasi</a>
-                <a href="#galeri" class="hover:text-white hover:bg-brand-card px-3 py-2 rounded-lg transition">Galeri</a>
                 <a href="#kontak" class="hover:text-white hover:bg-brand-card px-3 py-2 rounded-lg transition">Kontak</a>
             </nav>
 
@@ -100,10 +100,10 @@
 
         <div id="mobile-menu" class="hidden md:hidden bg-brand-card/98 border-b border-brand-border px-6 pt-4 pb-6 space-y-3 shadow-2xl backdrop-blur-lg">
             <a href="#beranda" class="mobile-link block text-slate-300 hover:text-white font-medium py-2 border-b border-brand-border/40">Beranda</a>
+            <a href="#galeri" class="mobile-link block text-slate-300 hover:text-white font-medium py-2 border-b border-brand-border/40">Galeri Kegiatan</a>
             <a href="#program" class="mobile-link block text-slate-300 hover:text-white font-medium py-2 border-b border-brand-border/40">Program Latihan</a>
             <a href="#pelatih" class="mobile-link block text-slate-300 hover:text-white font-medium py-2 border-b border-brand-border/40">Pelatih Utama</a>
             <a href="#prestasi" class="mobile-link block text-slate-300 hover:text-white font-medium py-2 border-b border-brand-border/40">Raihan Prestasi</a>
-            <a href="#galeri" class="mobile-link block text-slate-300 hover:text-white font-medium py-2 border-b border-brand-border/40">Galeri Kegiatan</a>
             <a href="#kontak" class="mobile-link block text-slate-300 hover:text-white font-medium py-2">Kontak & Lokasi</a>
             <div class="pt-3">
                 <a href="https://forms.gle/contohLinkGoogleForm" target="_blank" class="block text-center bg-brand-red hover:bg-red-700 text-white font-bold py-3.5 rounded-xl shadow-glow-red">
@@ -113,13 +113,18 @@
         </div>
     </header>
 
-    <!-- 2. HERO SECTION (Portal Dashboard Banner Style) -->
-    <section id="beranda" class="relative py-16 lg:py-24 overflow-hidden bg-gradient-to-b from-brand-card/40 to-brand-dark">
-        <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-red/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <!-- 2. HERO SECTION (Dengan Background Foto Kegiatan & Overlay Gelap) -->
+    <section id="beranda" class="relative py-24 lg:py-36 overflow-hidden">
+        <!-- Background Foto Kegiatan & Overlay Gradasi Gelap -->
+        <div class="absolute inset-0 z-0">
+            <!-- Ganti 'images/LogoKTA.jpeg' dengan foto kegiatan latihan asli Anda nanti -->
+            <img src="images/HeroBG.jpeg" alt="Background Kegiatan Kobar Taekwondo Academy" class="w-full h-full object-cover object-center filter brightness-50 scale-105 animate-pulse duration-1000">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-brand-dark/60"></div>
+        </div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <!-- Portal Card Container -->
-            <div class="bg-brand-card/80 border border-brand-border rounded-3xl p-8 sm:p-12 shadow-portal backdrop-blur-md">
+            <div class="bg-brand-card/85 border border-brand-border/80 rounded-3xl p-8 sm:p-12 shadow-portal backdrop-blur-md">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                     <div class="lg:col-span-7 text-center lg:text-left">
                         <div class="inline-flex items-center space-x-2 bg-brand-dark border border-brand-border px-4 py-2 rounded-xl mb-6 shadow-inner">
@@ -141,32 +146,24 @@
                             <a href="https://forms.gle/contohLinkGoogleForm" target="_blank" class="w-full sm:w-auto bg-brand-red hover:bg-red-700 text-white font-extrabold px-8 py-4 rounded-xl shadow-glow-red transition duration-300 transform hover:-translate-y-1 text-center tracking-wide">
                                 🚀 Daftar Latihan Sekarang
                             </a>
-                            <a href="#program" class="w-full sm:w-auto bg-brand-dark hover:bg-slate-800 text-slate-200 border border-brand-border font-semibold px-8 py-4 rounded-xl transition text-center">
-                                📋 Lihat Pilihan Program
+                            <a href="#galeri" class="w-full sm:w-auto bg-brand-dark hover:bg-slate-800 text-slate-200 border border-brand-border font-semibold px-8 py-4 rounded-xl transition text-center">
+                                📸 Lihat Galeri Kegiatan
                             </a>
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-5 flex justify-center">
-                        <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-3xl p-4 bg-gradient-to-tr from-brand-red/30 via-brand-dark to-purple-900/40 border border-brand-border flex items-center justify-center shadow-2xl rotate-1 hover:rotate-0 transition duration-500">
-                            <div class="w-56 h-56 sm:w-72 sm:h-72 rounded-2xl overflow-hidden bg-white shadow-2xl border-4 border-brand-red/60 flex items-center justify-center p-3">
-                                <img src="images/LogoKTA.jpeg" alt="Kobar Taekwondo Academy Logo" class="w-full h-full object-contain rounded-xl">
-                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Statistik Grid Card (Portal Style) -->
+                <!-- Statistik Grid Card -->
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-16 pt-10 border-t border-brand-border text-center">
-                    <div class="bg-brand-dark/60 border border-brand-border/80 p-5 rounded-2xl shadow-md">
+                    <div class="bg-brand-dark/80 border border-brand-border/80 p-5 rounded-2xl shadow-md">
                         <span class="block font-heading text-4xl sm:text-5xl font-bold text-white tracking-wide">70+</span>
                         <span class="text-xs text-slate-400 font-bold uppercase tracking-wider mt-1 block">Atlet Aktif Terdaftar</span>
                     </div>
-                    <div class="bg-brand-dark/60 border border-brand-border/80 p-5 rounded-2xl shadow-md">
+                    <div class="bg-brand-dark/80 border border-brand-border/80 p-5 rounded-2xl shadow-md">
                         <span class="block font-heading text-4xl sm:text-5xl font-bold text-brand-accent tracking-wide">8+</span>
                         <span class="text-xs text-slate-400 font-bold uppercase tracking-wider mt-1 block">Tahun Berdiri</span>
                     </div>
-                    <div class="bg-brand-dark/60 border border-brand-border/80 p-5 rounded-2xl shadow-md">
+                    <div class="bg-brand-dark/80 border border-brand-border/80 p-5 rounded-2xl shadow-md">
                         <span class="block font-heading text-4xl sm:text-5xl font-bold text-white tracking-wide">DAN IV</span>
                         <span class="text-xs text-slate-400 font-bold uppercase tracking-wider mt-1 block">Kukkiwon International</span>
                     </div>
@@ -175,190 +172,8 @@
         </div>
     </section>
 
-    <!-- 3. PROGRAM KELAS LATIHAN (Portal Grid Cards) -->
-    <section id="program" class="py-20 bg-brand-dark border-t border-brand-border/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-xs font-bold text-brand-red uppercase tracking-widest bg-brand-red/10 px-3 py-1 rounded-full border border-brand-red/30">Kurikulum Akademi</span>
-                <h2 class="font-heading text-4xl sm:text-5xl font-bold text-white tracking-wide mt-3">KELAS SESUAI JENJANG USIA</h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-brand-card border border-brand-border rounded-3xl p-8 hover:border-brand-red/60 transition duration-300 group shadow-portal flex flex-col justify-between">
-                    <div>
-                        <div class="w-14 h-14 bg-brand-red/10 rounded-2xl flex items-center justify-center text-brand-red mb-6 group-hover:bg-brand-red group-hover:text-white transition font-heading font-bold text-2xl">
-                            01
-                        </div>
-                        <h3 class="font-heading font-bold text-2xl text-white mb-3 tracking-wide">Pra-Kadet (Usia 6 - 11 Thn)</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6 font-medium">Pembentukan motorik dasar, pembiasaan disiplin, kelenturan tubuh, dan pengenalan teknik dasar Taekwondo secara menyenangkan.</p>
-                    </div>
-                    <ul class="text-xs text-slate-300 space-y-3 border-t border-brand-border/80 pt-5">
-                        <li class="flex items-center"><span class="text-brand-red mr-2 font-bold">✓</span> Fisik & Koordinasi Dasar</li>
-                        <li class="flex items-center"><span class="text-brand-red mr-2 font-bold">✓</span> Etika & Penghormatan Dojang</li>
-                    </ul>
-                </div>
-
-                <!-- Card 2 (Featured) -->
-                <div class="bg-brand-card border-2 border-brand-red rounded-3xl p-8 relative shadow-glow-red transform md:-translate-y-3 flex flex-col justify-between">
-                    <span class="absolute -top-3.5 right-8 bg-brand-red text-white text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-md">Paling Diminati</span>
-                    <div>
-                        <div class="w-14 h-14 bg-brand-red text-white rounded-2xl flex items-center justify-center mb-6 font-heading font-bold text-2xl shadow-md">
-                            02
-                        </div>
-                        <h3 class="font-heading font-bold text-2xl text-white mb-3 tracking-wide">Kadet & Junior (12 - 17 Thn)</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6 font-medium">Fokus pendalaman teknik pertarungan (Kyorugi) dan ketepatan jurus (Poomsae) serta Bela Diri Praktis khas Taekwondo.</p>
-                    </div>
-                    <ul class="text-xs text-slate-300 space-y-3 border-t border-brand-border/80 pt-5">
-                        <li class="flex items-center"><span class="text-brand-red mr-2 font-bold">✓</span> Pengembangan Fisik Atlet</li>
-                        <li class="flex items-center"><span class="text-brand-red mr-2 font-bold">✓</span> Strategi & Sparring Kyorugi</li>
-                        <li class="flex items-center"><span class="text-brand-red mr-2 font-bold">✓</span> Pendalaman Poomsae</li>
-                    </ul>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="bg-brand-card border border-brand-border rounded-3xl p-8 hover:border-brand-red/60 transition duration-300 group shadow-portal flex flex-col justify-between">
-                    <div>
-                        <div class="w-14 h-14 bg-brand-red/10 rounded-2xl flex items-center justify-center text-brand-red mb-6 group-hover:bg-brand-red group-hover:text-white transition font-heading font-bold text-2xl">
-                            03
-                        </div>
-                        <h3 class="font-heading font-bold text-2xl text-white mb-3 tracking-wide">Prestasi & Reguler Senior</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6 font-medium">Pengembangan tingkat lanjut, kebugaran intensif, dan pembinaan atlet tingkat kabupaten/provinsi/nasional.</p>
-                    </div>
-                    <ul class="text-xs text-slate-300 space-y-3 border-t border-brand-border/80 pt-5">
-                        <li class="flex items-center"><span class="text-brand-red mr-2 font-bold">✓</span> Persiapan Kejurda & Kejurnas</li>
-                        <li class="flex items-center"><span class="text-brand-red mr-2 font-bold">✓</span> Pendalaman Atlet Tingkat Lanjut</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. SEKSI HEAD COACH (Portal Profile Card) -->
-    <section id="pelatih" class="py-20 bg-brand-dark/80 border-t border-brand-border/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-xs font-bold text-brand-red uppercase tracking-widest bg-brand-red/10 px-3 py-1 rounded-full border border-brand-red/30">Dewan Instruktur</span>
-                <h2 class="font-heading text-4xl sm:text-5xl font-bold text-white tracking-wide mt-3">PROFIL HEAD COACH UTAMA</h2>
-            </div>
-
-            <!-- Card Profil Utama Head Coach -->
-            <div class="max-w-4xl mx-auto bg-brand-card border border-brand-border rounded-3xl p-8 sm:p-12 shadow-portal relative overflow-hidden">
-                <div class="absolute -top-16 -right-16 w-56 h-56 bg-brand-red/15 rounded-full blur-3xl pointer-events-none"></div>
-
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-                    <!-- Foto Profil Pelatih -->
-                    <div class="md:col-span-5 flex flex-col items-center">
-                        <div class="w-48 h-48 sm:w-56 sm:h-56 rounded-3xl bg-brand-dark border-2 border-brand-red overflow-hidden shadow-glow-red flex items-center justify-center p-3">
-                            <div class="w-full h-full bg-slate-900 rounded-2xl flex items-center justify-center text-slate-400 font-heading font-black text-4xl">
-                                <img src="images/LogoKTA.jpeg" alt="Head Coach" class="w-full h-full object-cover rounded-xl">
-                            </div>
-                        </div>
-                        <span class="mt-5 bg-brand-red/20 border border-brand-red/50 text-brand-red font-bold text-xs px-5 py-2 rounded-xl uppercase tracking-widest shadow-inner">
-                            Head Coach / Pelatih Kepala
-                        </span>
-                    </div>
-
-                    <!-- Detail Informasi & Daftar Sertifikasi -->
-                    <div class="md:col-span-7">
-                        <h3 class="font-subheading font-black text-2xl sm:text-3xl text-white mb-2 text-center md:text-left">
-                            Sabeum Nim<br>Rahmat Minarto S.Sos
-                        </h3>
-                        <p class="text-brand-accent font-bold text-sm mb-6 text-center md:text-left tracking-wide">
-                            Sabuk Hitam (DAN IV Kukkiwon International)
-                        </p>
-
-                        <div class="bg-brand-dark border border-brand-border p-6 rounded-2xl mb-6 shadow-inner">
-                            <h4 class="text-xs font-bold text-slate-200 uppercase tracking-widest mb-4 flex items-center gap-2">
-                                <span>📜</span> Catatan Sertifikasi & Lisensi Resmi:
-                            </h4>
-                            <ul class="space-y-3 text-xs sm:text-sm text-slate-300 font-medium">
-                                <li class="flex items-start gap-2.5">
-                                    <span class="text-brand-red font-bold">✦</span>
-                                    <span>Sertifikasi Sabuk Hitam DAN IV Kukkiwon (WT Korea)</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="text-brand-red font-bold">✦</span>
-                                    <span>Lisensi Pelatih Nasional Resmi</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="text-brand-red font-bold">✦</span>
-                                    <span>Pengalaman Atlet > 10 Tahun Pengalaman Atlet<br>Provinsi/Nasional</span>
-                                </li>
-                                <li class="flex items-start gap-2.5">
-                                    <span class="text-brand-red font-bold">✦</span>
-                                    <span>Pengalaman Mengajar > 8 Tahun di Dojang KTA</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed italic text-center md:text-left bg-brand-dark/40 p-4 rounded-xl border border-brand-border/40">
-                            "Mendidik atlet tidak hanya tentang fisik dan kemenangan di atas matras.<br>Tetapi tentang integritas, kerendahan hati, dan mental pantang menyerah."
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. RAIHAN PRESTASI (Portal Achievement Cards) -->
-    <section id="prestasi" class="py-20 bg-brand-dark border-t border-brand-border/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-xs font-bold text-brand-accent uppercase tracking-widest bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/30">Track Record Prestasi</span>
-                <h2 class="font-heading text-4xl sm:text-5xl font-bold text-white tracking-wide mt-3">PENCAPAIAN & MEDALI AKADEMI</h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-brand-card border border-brand-border p-8 rounded-3xl flex items-start space-x-5 shadow-portal hover:border-amber-500/50 transition">
-                    <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center flex-shrink-0 font-bold text-2xl shadow-inner">
-                        🥇
-                    </div>
-                    <div>
-                        <span class="text-xs text-amber-400 font-bold uppercase tracking-wider block mb-1">Klub Penyumbang Atlet Peraih Medali Terbanyak</span>
-                        <h3 class="font-heading font-bold text-2xl text-white tracking-wide">PORPROV Kalteng XII 2023</h3>
-                        <p class="text-slate-300 text-sm mt-2 font-medium leading-relaxed">Membawa pulang 1 Medali Emas, 3 Medali Perak dan 2 Medali Perunggu dalam ajang Porprov Kalteng XII 2023.</p>
-                    </div>
-                </div>
-
-                <div class="bg-brand-card border border-brand-border p-8 rounded-3xl flex items-start space-x-5 shadow-portal hover:border-amber-500/50 transition">
-                    <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center flex-shrink-0 font-bold text-2xl shadow-inner">
-                        🏆
-                    </div>
-                    <div>
-                        <span class="text-xs text-amber-400 font-bold uppercase tracking-wider block mb-1">Penyumbang Tunggal Medali Kalteng</span>
-                        <h3 class="font-heading font-bold text-2xl text-white tracking-wide">POPNAS XVII 2025</h3>
-                        <p class="text-slate-300 text-sm mt-2 font-medium leading-relaxed">Klub Penyumbang Atlet Peraih Medali Perunggu tingkat nasional.</p>
-                    </div>
-                </div>
-
-                <div class="bg-brand-card border border-brand-border p-8 rounded-3xl flex items-start space-x-5 shadow-portal hover:border-brand-red/50 transition">
-                    <div class="w-14 h-14 bg-brand-red/10 text-brand-red rounded-2xl flex items-center justify-center flex-shrink-0 font-bold text-2xl shadow-inner">
-                        🥋
-                    </div>
-                    <div>
-                        <span class="text-xs text-brand-red font-bold uppercase tracking-wider block mb-1">Open Kejuaraan Taekwondo</span>
-                        <h3 class="font-heading font-bold text-2xl text-white tracking-wide">Event Open Daerah Hingga Internasional</h3>
-                        <p class="text-slate-300 text-sm mt-2 font-medium leading-relaxed">Rutin mengikuti event kejuaraan lokal hingga kancah internasional secara konsisten.</p>
-                    </div>
-                </div>
-
-                <div class="bg-brand-card border border-brand-border p-8 rounded-3xl flex items-start space-x-5 shadow-portal hover:border-brand-accent/50 transition">
-                    <div class="w-14 h-14 bg-brand-accent/10 text-brand-accent rounded-2xl flex items-center justify-center flex-shrink-0 font-bold text-2xl shadow-inner">
-                        📈
-                    </div>
-                    <div>
-                        <span class="text-xs text-brand-accent font-bold uppercase tracking-wider block mb-1">Persiapan Berkelanjutan</span>
-                        <h3 class="font-heading font-bold text-2xl text-white tracking-wide">PORPROV Kalteng XIII 2026</h3>
-                        <p class="text-slate-300 text-sm mt-2 font-medium leading-relaxed">On Going... Persiapan intensif atlet menuju target juara umum berikutnya.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. SEKSI GALERI (Swiper Carousel Slider) -->
-    <section id="galeri" class="py-20 bg-brand-dark/80 border-t border-brand-border/60 overflow-hidden">
+    <!-- 3. SEKSI GALERI (Diposisikan Tepat Setelah Hero Section) -->
+    <section id="galeri" class="py-20 bg-brand-dark border-t border-brand-border/60 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <span class="text-xs font-bold text-brand-red uppercase tracking-widest bg-brand-red/10 px-3 py-1 rounded-full border border-brand-red/30">Dokumentasi Dojang</span>
@@ -445,7 +260,189 @@
         </div>
     </section>
 
-    <!-- 7. KONTAK & LOKASI (Portal Contact Section) -->
+    <!-- 4. PROGRAM KELAS LATIHAN -->
+    <section id="program" class="py-20 bg-brand-dark/80 border-t border-brand-border/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold text-brand-red uppercase tracking-widest bg-brand-red/10 px-3 py-1 rounded-full border border-brand-red/30">Kurikulum Akademi</span>
+                <h2 class="font-heading text-4xl sm:text-5xl font-bold text-white tracking-wide mt-3">KELAS SESUAI JENJANG USIA</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-brand-card border border-brand-border rounded-3xl p-8 hover:border-brand-red/60 transition duration-300 group shadow-portal flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-brand-red/10 rounded-2xl flex items-center justify-center text-brand-red mb-6 group-hover:bg-brand-red group-hover:text-white transition font-heading font-bold text-2xl">
+                            01
+                        </div>
+                        <h3 class="font-heading font-bold text-2xl text-white mb-3 tracking-wide">Pra-Kadet (Usia 6 - 11 Thn)</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6 font-medium">Pembentukan motorik dasar, pembiasaan disiplin, kelenturan tubuh, dan pengenalan teknik dasar Taekwondo secara menyenangkan.</p>
+                    </div>
+                    <ul class="text-xs text-slate-300 space-y-3 border-t border-brand-border/80 pt-5">
+                        <li class="flex items-center"><span class="text-brand-red mr-2 font-bold">✓</span> Fisik & Koordinasi Dasar</li>
+                        <li class="flex items-center"><span class="text-brand-red mr-2 font-bold">✓</span> Etika & Penghormatan Dojang</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 (Featured) -->
+                <div class="bg-brand-card border-2 border-brand-red rounded-3xl p-8 relative shadow-glow-red transform md:-translate-y-3 flex flex-col justify-between">
+                    <span class="absolute -top-3.5 right-8 bg-brand-red text-white text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-md">Paling Diminati</span>
+                    <div>
+                        <div class="w-14 h-14 bg-brand-red text-white rounded-2xl flex items-center justify-center mb-6 font-heading font-bold text-2xl shadow-md">
+                            02
+                        </div>
+                        <h3 class="font-heading font-bold text-2xl text-white mb-3 tracking-wide">Kadet & Junior (12 - 17 Thn)</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6 font-medium">Fokus pendalaman teknik pertarungan (Kyorugi) dan ketepatan jurus (Poomsae) serta Bela Diri Praktis khas Taekwondo.</p>
+                    </div>
+                    <ul class="text-xs text-slate-300 space-y-3 border-t border-brand-border/80 pt-5">
+                        <li class="flex items-center"><span class="text-brand-red mr-2 font-bold">✓</span> Pengembangan Fisik Atlet</li>
+                        <li class="flex items-center"><span class="text-brand-red mr-2 font-bold">✓</span> Strategi & Sparring Kyorugi</li>
+                        <li class="flex items-center"><span class="text-brand-red mr-2 font-bold">✓</span> Pendalaman Poomsae</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-brand-card border border-brand-border rounded-3xl p-8 hover:border-brand-red/60 transition duration-300 group shadow-portal flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-brand-red/10 rounded-2xl flex items-center justify-center text-brand-red mb-6 group-hover:bg-brand-red group-hover:text-white transition font-heading font-bold text-2xl">
+                            03
+                        </div>
+                        <h3 class="font-heading font-bold text-2xl text-white mb-3 tracking-wide">Prestasi & Reguler Senior</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6 font-medium">Pengembangan tingkat lanjut, kebugaran intensif, dan pembinaan atlet tingkat kabupaten/provinsi/nasional.</p>
+                    </div>
+                    <ul class="text-xs text-slate-300 space-y-3 border-t border-brand-border/80 pt-5">
+                        <li class="flex items-center"><span class="text-brand-red mr-2 font-bold">✓</span> Persiapan Kejurda & Kejurnas</li>
+                        <li class="flex items-center"><span class="text-brand-red mr-2 font-bold">✓</span> Pendalaman Atlet Tingkat Lanjut</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SEKSI HEAD COACH -->
+    <section id="pelatih" class="py-20 bg-brand-dark border-t border-brand-border/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold text-brand-red uppercase tracking-widest bg-brand-red/10 px-3 py-1 rounded-full border border-brand-red/30">Dewan Instruktur</span>
+                <h2 class="font-heading text-4xl sm:text-5xl font-bold text-white tracking-wide mt-3">PROFIL HEAD COACH UTAMA</h2>
+            </div>
+
+            <!-- Card Profil Utama Head Coach -->
+            <div class="max-w-4xl mx-auto bg-brand-card border border-brand-border rounded-3xl p-8 sm:p-12 shadow-portal relative overflow-hidden">
+                <div class="absolute -top-16 -right-16 w-56 h-56 bg-brand-red/15 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                    <!-- Foto Profil Pelatih -->
+                    <div class="md:col-span-5 flex flex-col items-center">
+                        <div class="w-48 h-48 sm:w-56 sm:h-56 rounded-3xl bg-brand-dark border-2 border-brand-red overflow-hidden shadow-glow-red flex items-center justify-center p-3">
+                            <div class="w-full h-full bg-slate-900 rounded-2xl flex items-center justify-center text-slate-400 font-heading font-black text-4xl">
+                                <img src="images/LogoKTA.jpeg" alt="Head Coach" class="w-full h-full object-cover rounded-xl">
+                            </div>
+                        </div>
+                        <span class="mt-5 bg-brand-red/20 border border-brand-red/50 text-brand-red font-bold text-xs px-5 py-2 rounded-xl uppercase tracking-widest shadow-inner">
+                            Head Coach / Pelatih Kepala
+                        </span>
+                    </div>
+
+                    <!-- Detail Informasi & Daftar Sertifikasi -->
+                    <div class="md:col-span-7">
+                        <h3 class="font-subheading font-black text-2xl sm:text-3xl text-white mb-2 text-center md:text-left">
+                            Sabeum Nim<br>Rahmat Minarto S.Sos
+                        </h3>
+                        <p class="text-brand-accent font-bold text-sm mb-6 text-center md:text-left tracking-wide">
+                            Sabuk Hitam (DAN IV Kukkiwon International)
+                        </p>
+
+                        <div class="bg-brand-dark border border-brand-border p-6 rounded-2xl mb-6 shadow-inner">
+                            <h4 class="text-xs font-bold text-slate-200 uppercase tracking-widest mb-4 flex items-center gap-2">
+                                <span>📜</span> Catatan Sertifikasi & Lisensi Resmi:
+                            </h4>
+                            <ul class="space-y-3 text-xs sm:text-sm text-slate-300 font-medium">
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-brand-red font-bold">✦</span>
+                                    <span>Sertifikasi Sabuk Hitam DAN IV Kukkiwon (WT Korea)</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-brand-red font-bold">✦</span>
+                                    <span>Lisensi Pelatih Nasional Resmi</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-brand-red font-bold">✦</span>
+                                    <span>Pengalaman Atlet > 10 Tahun Provinsi/Nasional</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-brand-red font-bold">✦</span>
+                                    <span>Pengalaman Mengajar > 8 Tahun di Dojang KTA</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed italic text-center md:text-left bg-brand-dark/40 p-4 rounded-xl border border-brand-border/40">
+                            "Mendidik atlet tidak hanya tentang fisik dan kemenangan di atas matras.<br>Tetapi tentang integritas, kerendahan hati, dan mental pantang menyerah."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. RAIHAN PRESTASI -->
+    <section id="prestasi" class="py-20 bg-brand-dark/80 border-t border-brand-border/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold text-brand-accent uppercase tracking-widest bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/30">Track Record Prestasi</span>
+                <h2 class="font-heading text-4xl sm:text-5xl font-bold text-white tracking-wide mt-3">PENCAPAIAN & MEDALI AKADEMI</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-brand-card border border-brand-border p-8 rounded-3xl flex items-start space-x-5 shadow-portal hover:border-amber-500/50 transition">
+                    <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center flex-shrink-0 font-bold text-2xl shadow-inner">
+                        🥇
+                    </div>
+                    <div>
+                        <span class="text-xs text-amber-400 font-bold uppercase tracking-wider block mb-1">Klub Penyumbang Atlet Peraih Medali Terbanyak</span>
+                        <h3 class="font-heading font-bold text-2xl text-white tracking-wide">PORPROV Kalteng XII 2023</h3>
+                        <p class="text-slate-300 text-sm mt-2 font-medium leading-relaxed">Membawa pulang 1 Medali Emas, 3 Medali Perak dan 2 Medali Perunggu dalam ajang Porprov Kalteng XII 2023.</p>
+                    </div>
+                </div>
+
+                <div class="bg-brand-card border border-brand-border p-8 rounded-3xl flex items-start space-x-5 shadow-portal hover:border-amber-500/50 transition">
+                    <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center flex-shrink-0 font-bold text-2xl shadow-inner">
+                        🏆
+                    </div>
+                    <div>
+                        <span class="text-xs text-amber-400 font-bold uppercase tracking-wider block mb-1">Penyumbang Tunggal Medali Kalteng</span>
+                        <h3 class="font-heading font-bold text-2xl text-white tracking-wide">POPNAS XVII 2025</h3>
+                        <p class="text-slate-300 text-sm mt-2 font-medium leading-relaxed">Klub Penyumbang Atlet Peraih Medali Perunggu tingkat nasional.</p>
+                    </div>
+                </div>
+
+                <div class="bg-brand-card border border-brand-border p-8 rounded-3xl flex items-start space-x-5 shadow-portal hover:border-brand-red/50 transition">
+                    <div class="w-14 h-14 bg-brand-red/10 text-brand-red rounded-2xl flex items-center justify-center flex-shrink-0 font-bold text-2xl shadow-inner">
+                        🥋
+                    </div>
+                    <div>
+                        <span class="text-xs text-brand-red font-bold uppercase tracking-wider block mb-1">Open Kejuaraan Taekwondo</span>
+                        <h3 class="font-heading font-bold text-2xl text-white tracking-wide">Event Open Daerah Hingga Internasional</h3>
+                        <p class="text-slate-300 text-sm mt-2 font-medium leading-relaxed">Rutin mengikuti event kejuaraan lokal hingga kancah internasional secara konsisten.</p>
+                    </div>
+                </div>
+
+                <div class="bg-brand-card border border-brand-border p-8 rounded-3xl flex items-start space-x-5 shadow-portal hover:border-brand-accent/50 transition">
+                    <div class="w-14 h-14 bg-brand-accent/10 text-brand-accent rounded-2xl flex items-center justify-center flex-shrink-0 font-bold text-2xl shadow-inner">
+                        📈
+                    </div>
+                    <div>
+                        <span class="text-xs text-brand-accent font-bold uppercase tracking-wider block mb-1">Persiapan Berkelanjutan</span>
+                        <h3 class="font-heading font-bold text-2xl text-white tracking-wide">PORPROV Kalteng XIII 2026</h3>
+                        <p class="text-slate-300 text-sm mt-2 font-medium leading-relaxed">On Going... Persiapan intensif atlet menuju target juara umum berikutnya.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. KONTAK & LOKASI -->
     <section id="kontak" class="py-20 bg-brand-dark border-t border-brand-border/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -496,6 +493,7 @@
             <p>© 2026 Kobar Taekwondo Academy. All rights reserved.</p>
             <div class="flex space-x-6">
                 <a href="#beranda" class="hover:text-white transition">Beranda</a>
+                <a href="#galeri" class="hover:text-white transition">Galeri</a>
                 <a href="#program" class="hover:text-white transition">Program</a>
                 <a href="#kontak" class="hover:text-white transition">Kontak</a>
             </div>
