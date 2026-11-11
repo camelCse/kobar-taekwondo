@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kobar Taekwondo Academy - Official Website</title>
+    <title>Kobar Taekwondo Academy - Portal Resmi Pendaftaran & Informasi</title>
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Bebas Neue & Montserrat untuk Judul Poster Olahraga, Plus Jakarta Sans untuk Body -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -22,7 +22,8 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        heading: ['Montserrat', 'sans-serif'],
+                        heading: ['Bebas Neue', 'Montserrat', 'sans-serif'],
+                        subheading: ['Montserrat', 'sans-serif'],
                         sans: ['Plus Jakarta Sans', 'sans-serif'],
                     },
                     colors: {
@@ -36,7 +37,8 @@
                         }
                     },
                     boxShadow: {
-                        'glow-red': '0 0 25px -5px rgba(220, 38, 38, 0.4)',
+                        'glow-red': '0 0 30px -5px rgba(220, 38, 38, 0.5)',
+                        'portal': '0 10px 30px -10px rgba(0, 0, 0, 0.5)'
                     }
                 }
             }
@@ -44,40 +46,48 @@
     </script>
 
     <style>
-        /* kustomisasi warna penanda slide SwiperJS */
         .swiper-pagination-bullet { background: #64748b !important; }
-        .swiper-pagination-bullet-active { background: #DC2626 !important; width: 24px; border-radius: 9999px; }
+        .swiper-pagination-bullet-active { background: #DC2626 !important; width: 28px; border-radius: 9999px; }
         .swiper-button-next, .swiper-button-prev { color: #DC2626 !important; }
     </style>
 </head>
 <body class="bg-brand-dark text-slate-100 font-sans antialiased selection:bg-brand-red selection:text-white overflow-x-hidden">
 
+    <!-- 0. TOP ANNOUNCEMENT PORTAL BAR (Ala simpbti.id) -->
+    <div class="bg-gradient-to-r from-brand-burgundy via-brand-red to-brand-burgundy text-white text-xs sm:text-sm font-semibold py-2.5 px-4 text-center tracking-wide border-b border-brand-border/40 shadow-md">
+        <div class="max-w-7xl mx-auto flex items-center justify-center space-x-2">
+            <span class="bg-white/20 px-2 py-0.5 rounded text-[11px] uppercase tracking-widest font-bold">INFO RESMI</span>
+            <span>Pendaftaran Anggota Baru & Ujian Kenaikan Tingkat Periode Ini Telah Dibuka!</span>
+            <a href="https://forms.gle/contohLinkGoogleForm" target="_blank" class="underline hover:text-brand-accent font-bold ml-2">Daftar Sekarang →</a>
+        </div>
+    </div>
+
     <!-- 1. NAVIGATION BAR -->
-    <header class="bg-brand-dark/90 backdrop-blur-md border-b border-brand-border/60 sticky top-0 z-50 transition-all">
+    <header class="bg-brand-dark/95 backdrop-blur-md border-b border-brand-border/80 sticky top-0 z-50 transition-all">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="#beranda" class="flex items-center space-x-3 group">
-                <div class="w-11 h-11 rounded-full overflow-hidden border-2 border-brand-red shadow-glow-red flex-shrink-0 bg-white">
-                    <img src="images/LogoKTA.jpeg" alt="Logo Kobar Taekwondo Academy" class="w-full h-full object-cover">
+                <div class="w-12 h-12 rounded-xl overflow-hidden border-2 border-brand-red shadow-glow-red flex-shrink-0 bg-white p-0.5">
+                    <img src="images/LogoKTA.jpeg" alt="Logo Kobar Taekwondo Academy" class="w-full h-full object-cover rounded-lg">
                 </div>
                 <div>
-                    <span class="block font-heading font-extrabold text-sm sm:text-base tracking-wider text-white group-hover:text-brand-red transition">KOBAR TAEKWONDO</span>
-                    <span class="block text-[10px] tracking-widest text-slate-400 font-semibold uppercase">Academy</span>
+                    <span class="block font-subheading font-black text-sm sm:text-base tracking-wider text-white group-hover:text-brand-red transition">KOBAR TAEKWONDO</span>
+                    <span class="block text-[10px] tracking-widest text-brand-accent font-bold uppercase">Portal Akademi Resmi</span>
                 </div>
             </a>
 
             <!-- Desktop Navigation -->
-            <nav class="hidden md:flex items-center space-x-7 font-medium text-sm tracking-wide text-slate-300">
-                <a href="#beranda" class="hover:text-white hover:border-b-2 hover:border-brand-red py-1 transition">Beranda</a>
-                <a href="#program" class="hover:text-white hover:border-b-2 hover:border-brand-red py-1 transition">Program</a>
-                <a href="#pelatih" class="hover:text-white hover:border-b-2 hover:border-brand-red py-1 transition">Pelatih Utama</a>
-                <a href="#prestasi" class="hover:text-white hover:border-b-2 hover:border-brand-red py-1 transition">Prestasi</a>
-                <a href="#galeri" class="hover:text-white hover:border-b-2 hover:border-brand-red py-1 transition">Galeri</a>
-                <a href="#kontak" class="hover:text-white hover:border-b-2 hover:border-brand-red py-1 transition">Kontak</a>
+            <nav class="hidden md:flex items-center space-x-6 font-semibold text-sm tracking-wide text-slate-300">
+                <a href="#beranda" class="hover:text-white hover:bg-brand-card px-3 py-2 rounded-lg transition">Beranda</a>
+                <a href="#program" class="hover:text-white hover:bg-brand-card px-3 py-2 rounded-lg transition">Program</a>
+                <a href="#pelatih" class="hover:text-white hover:bg-brand-card px-3 py-2 rounded-lg transition">Pelatih Utama</a>
+                <a href="#prestasi" class="hover:text-white hover:bg-brand-card px-3 py-2 rounded-lg transition">Prestasi</a>
+                <a href="#galeri" class="hover:text-white hover:bg-brand-card px-3 py-2 rounded-lg transition">Galeri</a>
+                <a href="#kontak" class="hover:text-white hover:bg-brand-card px-3 py-2 rounded-lg transition">Kontak</a>
             </nav>
 
             <div class="hidden md:block">
-                <a href="https://forms.gle/contohLinkGoogleForm" target="_blank" class="bg-brand-red hover:bg-red-700 text-white font-semibold text-sm px-6 py-3 rounded-full shadow-glow-red transition duration-300 transform hover:-translate-y-0.5 inline-flex items-center space-x-2">
-                    <span>Daftar Sekarang</span>
+                <a href="https://forms.gle/contohLinkGoogleForm" target="_blank" class="bg-brand-red hover:bg-red-700 text-white font-bold text-sm px-6 py-3 rounded-xl shadow-glow-red transition duration-300 transform hover:-translate-y-0.5 inline-flex items-center space-x-2">
+                    <span>Portal Pendaftaran</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                 </a>
             </div>
@@ -89,14 +99,14 @@
             </button>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-brand-card/95 border-b border-brand-border px-6 pt-4 pb-6 space-y-4 shadow-2xl backdrop-blur-lg">
-            <a href="#beranda" class="mobile-link block text-slate-300 hover:text-white font-medium py-1">Beranda</a>
-            <a href="#program" class="mobile-link block text-slate-300 hover:text-white font-medium py-1">Program Latihan</a>
-            <a href="#pelatih" class="mobile-link block text-slate-300 hover:text-white font-medium py-1">Pelatih Utama</a>
-            <a href="#prestasi" class="mobile-link block text-slate-300 hover:text-white font-medium py-1">Raihan Prestasi</a>
-            <a href="#galeri" class="mobile-link block text-slate-300 hover:text-white font-medium py-1">Galeri Kegiatan</a>
-            <a href="#kontak" class="mobile-link block text-slate-300 hover:text-white font-medium py-1">Kontak & Lokasi</a>
-            <div class="pt-2">
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-card/98 border-b border-brand-border px-6 pt-4 pb-6 space-y-3 shadow-2xl backdrop-blur-lg">
+            <a href="#beranda" class="mobile-link block text-slate-300 hover:text-white font-medium py-2 border-b border-brand-border/40">Beranda</a>
+            <a href="#program" class="mobile-link block text-slate-300 hover:text-white font-medium py-2 border-b border-brand-border/40">Program Latihan</a>
+            <a href="#pelatih" class="mobile-link block text-slate-300 hover:text-white font-medium py-2 border-b border-brand-border/40">Pelatih Utama</a>
+            <a href="#prestasi" class="mobile-link block text-slate-300 hover:text-white font-medium py-2 border-b border-brand-border/40">Raihan Prestasi</a>
+            <a href="#galeri" class="mobile-link block text-slate-300 hover:text-white font-medium py-2 border-b border-brand-border/40">Galeri Kegiatan</a>
+            <a href="#kontak" class="mobile-link block text-slate-300 hover:text-white font-medium py-2">Kontak & Lokasi</a>
+            <div class="pt-3">
                 <a href="https://forms.gle/contohLinkGoogleForm" target="_blank" class="block text-center bg-brand-red hover:bg-red-700 text-white font-bold py-3.5 rounded-xl shadow-glow-red">
                     Daftar Anggota Baru
                 </a>
@@ -104,176 +114,186 @@
         </div>
     </header>
 
-    <!-- 2. HERO SECTION -->
-    <section id="beranda" class="relative py-20 lg:py-32 overflow-hidden">
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-brand-red/10 rounded-full blur-3xl pointer-events-none"></div>
+    <!-- 2. HERO SECTION (Portal Dashboard Banner Style) -->
+    <section id="beranda" class="relative py-16 lg:py-24 overflow-hidden bg-gradient-to-b from-brand-card/40 to-brand-dark">
+        <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-red/10 rounded-full blur-[120px] pointer-events-none"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 text-center lg:text-left">
-                    <div class="inline-flex items-center space-x-2 bg-brand-card border border-brand-border px-4 py-1.5 rounded-full mb-6">
-                        <span class="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse"></span>
-                        <span class="text-xs font-semibold text-slate-300 uppercase tracking-wider">Pendaftaran Periode Ini Dibuka</span>
+            <!-- Portal Card Container -->
+            <div class="bg-brand-card/80 border border-brand-border rounded-3xl p-8 sm:p-12 shadow-portal backdrop-blur-md">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7 text-center lg:text-left">
+                        <div class="inline-flex items-center space-x-2 bg-brand-dark border border-brand-border px-4 py-2 rounded-xl mb-6 shadow-inner">
+                            <span class="w-3 h-3 bg-emerald-500 rounded-full animate-ping"></span>
+                            <span class="text-xs font-bold text-slate-200 uppercase tracking-widest">Portal Penerimaan Atlet & Siswa Baru</span>
+                        </div>
+
+                        <!-- Judul Punchy ala Poster Olahraga dengan Bebas Neue -->
+                        <h1 class="font-heading text-5xl sm:text-7xl font-bold tracking-wider text-white mb-6 leading-none">
+                            MEMBENTUK MENTAL <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-red via-rose-500 to-amber-400">JUARA & DISIPLIN</span> TANGGUH
+                        </h1>
+
+                        <p class="text-slate-300 text-base sm:text-lg leading-relaxed mb-8 font-medium">
+                            Akademi Taekwondo Kobar.<br>
+                            Mengembangkan potensi atlet usia dini hingga senior dengan standar teknik resmi World Taekwondo (WT).
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <a href="https://forms.gle/contohLinkGoogleForm" target="_blank" class="w-full sm:w-auto bg-brand-red hover:bg-red-700 text-white font-extrabold px-8 py-4 rounded-xl shadow-glow-red transition duration-300 transform hover:-translate-y-1 text-center tracking-wide">
+                                🚀 Daftar Latihan Sekarang
+                            </a>
+                            <a href="#program" class="w-full sm:w-auto bg-brand-dark hover:bg-slate-800 text-slate-200 border border-brand-border font-semibold px-8 py-4 rounded-xl transition text-center">
+                                📋 Lihat Pilihan Program
+                            </a>
+                        </div>
                     </div>
 
-                    <h1 class="font-heading text-4xl sm:text-6xl font-black tracking-tight text-white mb-6 leading-tight">
-                        Membentuk Mental <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-red via-rose-500 to-purple-500">Juara & Disiplin</span> Tangguh
-                    </h1>
-
-                    <p class="text-slate-400 text-base sm:text-lg leading-relaxed mb-8">
-                        Akademi Taekwondo Kobar.<br>
-                        Mengembangkan potensi atlet usia dini hingga senior dengan standar teknik resmi World Taekwondo (WT).
-                    </p>
-
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                        <a href="https://forms.gle/contohLinkGoogleForm" target="_blank" class="w-full sm:w-auto bg-brand-red hover:bg-red-700 text-white font-bold px-8 py-4 rounded-full shadow-glow-red transition duration-300 transform hover:-translate-y-1 text-center">
-                            Daftar Latihan Sekarang
-                        </a>
-                        <a href="#program" class="w-full sm:w-auto bg-brand-card hover:bg-slate-800 text-slate-200 border border-brand-border font-semibold px-8 py-4 rounded-full transition text-center">
-                            Pilihan Program
-                        </a>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-5 flex justify-center">
-                    <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full p-4 bg-gradient-to-tr from-brand-red/20 via-brand-card to-purple-900/30 border border-brand-border flex items-center justify-center shadow-2xl">
-                        <div class="w-52 h-52 sm:w-64 sm:h-64 rounded-full overflow-hidden bg-white shadow-xl border-4 border-brand-red/50 flex items-center justify-center p-2">
-                            <img src="images/LogoKTA.jpeg" alt="Kobar Taekwondo Academy Logo" class="w-full h-full object-contain">
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-3xl p-4 bg-gradient-to-tr from-brand-red/30 via-brand-dark to-purple-900/40 border border-brand-border flex items-center justify-center shadow-2xl rotate-1 hover:rotate-0 transition duration-500">
+                            <div class="w-56 h-56 sm:w-72 sm:h-72 rounded-2xl overflow-hidden bg-white shadow-2xl border-4 border-brand-red/60 flex items-center justify-center p-3">
+                                <img src="images/LogoKTA.jpeg" alt="Kobar Taekwondo Academy Logo" class="w-full h-full object-contain rounded-xl">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="grid grid-cols-3 gap-4 mt-20 pt-12 border-t border-brand-border/60 max-w-2xl mx-auto text-center">
-                <div>
-                    <span class="block font-heading text-2xl sm:text-3xl font-black text-white">70+</span>
-                    <span class="text-xs text-slate-400 font-medium">Atlet Aktif</span>
-                </div>
-                <div>
-                    <span class="block font-heading text-2xl sm:text-3xl font-black text-brand-accent">8+</span>
-                    <span class="text-xs text-slate-400 font-medium">Tahun Berdiri</span>
-                </div>
-                <div>
-                    <span class="block font-heading text-2xl sm:text-3xl font-black text-white">DAN IV</span>
-                    <span class="text-xs text-slate-400 font-medium">Kukkiwon HeadCoach</span>
+                <!-- Statistik Grid Card (Portal Style) -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-16 pt-10 border-t border-brand-border text-center">
+                    <div class="bg-brand-dark/60 border border-brand-border/80 p-5 rounded-2xl shadow-md">
+                        <span class="block font-heading text-4xl sm:text-5xl font-bold text-white tracking-wide">70+</span>
+                        <span class="text-xs text-slate-400 font-bold uppercase tracking-wider mt-1 block">Atlet Aktif Terdaftar</span>
+                    </div>
+                    <div class="bg-brand-dark/60 border border-brand-border/80 p-5 rounded-2xl shadow-md">
+                        <span class="block font-heading text-4xl sm:text-5xl font-bold text-brand-accent tracking-wide">8+</span>
+                        <span class="text-xs text-slate-400 font-bold uppercase tracking-wider mt-1 block">Tahun Pengabdian & Berdiri</span>
+                    </div>
+                    <div class="bg-brand-dark/60 border border-brand-border/80 p-5 rounded-2xl shadow-md">
+                        <span class="block font-heading text-4xl sm:text-5xl font-bold text-white tracking-wide">DAN IV</span>
+                        <span class="text-xs text-slate-400 font-bold uppercase tracking-wider mt-1 block">Kukkiwon International Coach</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. PROGRAM KELAS LATIHAN -->
-    <section id="program" class="py-20 bg-brand-dark/50 border-t border-brand-border/40">
+    <!-- 3. PROGRAM KELAS LATIHAN (Portal Grid Cards) -->
+    <section id="program" class="py-20 bg-brand-dark border-t border-brand-border/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-xs font-bold text-brand-red uppercase tracking-widest mb-2">Program Akademi</h2>
-                <p class="font-heading text-3xl sm:text-4xl font-extrabold text-white">Kelas Sesuai Jenjang Usia</p>
+                <span class="text-xs font-bold text-brand-red uppercase tracking-widest bg-brand-red/10 px-3 py-1 rounded-full border border-brand-red/30">Kurikulum Akademi</span>
+                <h2 class="font-heading text-4xl sm:text-5xl font-bold text-white tracking-wide mt-3">KELAS SESUAI JENJANG USIA</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 hover:border-brand-red/50 transition duration-300 group">
-                    <div class="w-12 h-12 bg-brand-red/10 rounded-xl flex items-center justify-center text-brand-red mb-6 group-hover:bg-brand-red group-hover:text-white transition font-bold">
-                        01
+                <!-- Card 1 -->
+                <div class="bg-brand-card border border-brand-border rounded-3xl p-8 hover:border-brand-red/60 transition duration-300 group shadow-portal flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-brand-red/10 rounded-2xl flex items-center justify-center text-brand-red mb-6 group-hover:bg-brand-red group-hover:text-white transition font-heading font-bold text-2xl">
+                            01
+                        </div>
+                        <h3 class="font-heading font-bold text-2xl text-white mb-3 tracking-wide">Pra-Kadet (Usia 6 - 11 Thn)</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6 font-medium">Pembentukan motorik dasar, pembiasaan disiplin, kelenturan tubuh, dan pengenalan teknik dasar Taekwondo secara menyenangkan.</p>
                     </div>
-                    <h3 class="font-heading font-bold text-xl text-white mb-2">Pra-Kadet (Usia 6 - 11 Thn)</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Pembentukan motorik dasar, pembiasaan disiplin, kelenturan tubuh, dan pengenalan teknik dasar Taekwondo secara menyenangkan.</p>
-                    <ul class="text-xs text-slate-300 space-y-2 border-t border-brand-border/60 pt-4">
-                        <li class="flex items-center"><span class="text-brand-red mr-2">✓</span> Fisik & Koordinasi Dasar</li>
-                        <li class="flex items-center"><span class="text-brand-red mr-2">✓</span> Etika & Penghormatan Dojang</li>
+                    <ul class="text-xs text-slate-300 space-y-3 border-t border-brand-border/80 pt-5">
+                        <li class="flex items-center"><span class="text-brand-red mr-2 font-bold">✓</span> Fisik & Koordinasi Dasar</li>
+                        <li class="flex items-center"><span class="text-brand-red mr-2 font-bold">✓</span> Etika & Penghormatan Dojang</li>
                     </ul>
                 </div>
 
-                <div class="bg-brand-card border border-brand-red/60 rounded-2xl p-6 relative shadow-glow-red transform md:-translate-y-2">
-                    <span class="absolute -top-3 right-6 bg-brand-red text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Favorit</span>
-                    <div class="w-12 h-12 bg-brand-red text-white rounded-xl flex items-center justify-center mb-6 font-bold">
-                        02
+                <!-- Card 2 (Featured) -->
+                <div class="bg-brand-card border-2 border-brand-red rounded-3xl p-8 relative shadow-glow-red transform md:-translate-y-3 flex flex-col justify-between">
+                    <span class="absolute -top-3.5 right-8 bg-brand-red text-white text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-md">Paling Diminati</span>
+                    <div>
+                        <div class="w-14 h-14 bg-brand-red text-white rounded-2xl flex items-center justify-center mb-6 font-heading font-bold text-2xl shadow-md">
+                            02
+                        </div>
+                        <h3 class="font-heading font-bold text-2xl text-white mb-3 tracking-wide">Kadet & Junior (12 - 17 Thn)</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6 font-medium">Fokus pendalaman teknik pertarungan (Kyorugi) dan ketepatan jurus (Poomsae) serta Bela Diri Praktis khas Taekwondo.</p>
                     </div>
-                    <h3 class="font-heading font-bold text-xl text-white mb-2">Kadet & Junior (12 - 17 Thn)</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Fokus pendalaman teknik pertarungan (Kyorugi) dan ketepatan jurus (Poomsae) serta Bela Diri Praktis khas Taekwondo.</p>
-                    <ul class="text-xs text-slate-300 space-y-2 border-t border-brand-border/60 pt-4">
-                        <li class="flex items-center"><span class="text-brand-red mr-2">✓</span> Pengembangan Fisik Atlet</li>
-                        <li class="flex items-center"><span class="text-brand-red mr-2">✓</span> Strategi & Sparring Kyorugi</li>
-                        <li class="flex items-center"><span class="text-brand-red mr-2">✓</span> Pendalaman Poomsae</li>
+                    <ul class="text-xs text-slate-300 space-y-3 border-t border-brand-border/80 pt-5">
+                        <li class="flex items-center"><span class="text-brand-red mr-2 font-bold">✓</span> Pengembangan Fisik Atlet</li>
+                        <li class="flex items-center"><span class="text-brand-red mr-2 font-bold">✓</span> Strategi & Sparring Kyorugi</li>
+                        <li class="flex items-center"><span class="text-brand-red mr-2 font-bold">✓</span> Pendalaman Poomsae</li>
                     </ul>
                 </div>
 
-                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 hover:border-brand-red/50 transition duration-300 group">
-                    <div class="w-12 h-12 bg-brand-red/10 rounded-xl flex items-center justify-center text-brand-red mb-6 group-hover:bg-brand-red group-hover:text-white transition font-bold">
-                        03
+                <!-- Card 3 -->
+                <div class="bg-brand-card border border-brand-border rounded-3xl p-8 hover:border-brand-red/60 transition duration-300 group shadow-portal flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-brand-red/10 rounded-2xl flex items-center justify-center text-brand-red mb-6 group-hover:bg-brand-red group-hover:text-white transition font-heading font-bold text-2xl">
+                            03
+                        </div>
+                        <h3 class="font-heading font-bold text-2xl text-white mb-3 tracking-wide">Prestasi & Reguler Senior</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6 font-medium">Pengembangan tingkat lanjut, kebugaran intensif, dan pembinaan atlet tingkat kabupaten/provinsi/nasional.</p>
                     </div>
-                    <h3 class="font-heading font-bold text-xl text-white mb-2">Prestasi & Reguler Senior</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Pengembangan tingkat lanjut, kebugaran intensif, dan pembinaan atlet tingkat kabupaten/provinsi/nasional.</p>
-                    <ul class="text-xs text-slate-300 space-y-2 border-t border-brand-border/60 pt-4">
-                        <li class="flex items-center"><span class="text-brand-red mr-2">✓</span> Persiapan Kejurda & Kejurnas</li>
-                        <li class="flex items-center"><span class="text-brand-red mr-2">✓</span> Pendalaman Atlet Tingkat Lanjut</li>
+                    <ul class="text-xs text-slate-300 space-y-3 border-t border-brand-border/80 pt-5">
+                        <li class="flex items-center"><span class="text-brand-red mr-2 font-bold">✓</span> Persiapan Kejurda & Kejurnas</li>
+                        <li class="flex items-center"><span class="text-brand-red mr-2 font-bold">✓</span> Pendalaman Atlet Tingkat Lanjut</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. SEKSI HEAD COACH (REVISI KHUSUS HEAD COACH) -->
-    <section id="pelatih" class="py-20">
+    <!-- 4. SEKSI HEAD COACH (Portal Profile Card) -->
+    <section id="pelatih" class="py-20 bg-brand-dark/80 border-t border-brand-border/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-xs font-bold text-brand-red uppercase tracking-widest mb-2">Instruktur Utama</h2>
-                <p class="font-heading text-3xl sm:text-4xl font-extrabold text-white">Profil Head Coach</p>
+                <span class="text-xs font-bold text-brand-red uppercase tracking-widest bg-brand-red/10 px-3 py-1 rounded-full border border-brand-red/30">Dewan Instruktur</span>
+                <h2 class="font-heading text-4xl sm:text-5xl font-bold text-white tracking-wide mt-3">PROFIL HEAD COACH UTAMA</h2>
             </div>
 
             <!-- Card Profil Utama Head Coach -->
-            <div class="max-w-4xl mx-auto bg-brand-card border border-brand-border rounded-3xl p-8 sm:p-10 shadow-2xl relative overflow-hidden">
-                <!-- Hiasan Background Glow -->
-                <div class="absolute -top-10 -right-10 w-40 h-40 bg-brand-red/20 rounded-full blur-2xl pointer-events-none"></div>
+            <div class="max-w-4xl mx-auto bg-brand-card border border-brand-border rounded-3xl p-8 sm:p-12 shadow-portal relative overflow-hidden">
+                <div class="absolute -top-16 -right-16 w-56 h-56 bg-brand-red/15 rounded-full blur-3xl pointer-events-none"></div>
 
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-                    <!-- Foto Profil Pelatih (Ganti src="headcoach.jpg" jika sudah ada fotonya) -->
+                    <!-- Foto Profil Pelatih -->
                     <div class="md:col-span-5 flex flex-col items-center">
-                        <div class="w-44 h-44 sm:w-52 sm:h-52 rounded-2xl bg-brand-dark border-2 border-brand-red overflow-hidden shadow-glow-red flex items-center justify-center p-2">
-                            <!-- Tempat Foto Head Coach -->
-                            <div class="w-full h-full bg-slate-800 rounded-xl flex items-center justify-center text-slate-400 font-heading font-black text-4xl">
-                                <img src="images/LogoKTA.jpeg">
+                        <div class="w-48 h-48 sm:w-56 sm:h-56 rounded-3xl bg-brand-dark border-2 border-brand-red overflow-hidden shadow-glow-red flex items-center justify-center p-3">
+                            <div class="w-full h-full bg-slate-900 rounded-2xl flex items-center justify-center text-slate-400 font-heading font-black text-4xl">
+                                <img src="images/LogoKTA.jpeg" alt="Head Coach" class="w-full h-full object-cover rounded-xl">
                             </div>
                         </div>
-                        <span class="mt-4 bg-brand-red/10 border border-brand-red/40 text-brand-red font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-wider">
+                        <span class="mt-5 bg-brand-red/20 border border-brand-red/50 text-brand-red font-bold text-xs px-5 py-2 rounded-xl uppercase tracking-widest shadow-inner">
                             Head Coach / Pelatih Kepala
                         </span>
                     </div>
 
-                    <!-- Detail Informasi & Daftar Sertifikasi (Mudah Diganti) -->
+                    <!-- Detail Informasi & Daftar Sertifikasi -->
                     <div class="md:col-span-7">
-                        <!-- NAMA HEAD COACH (Silakan ganti teks ini) -->
-                        <h3 class="font-heading font-black text-2xl sm:text-3xl text-white mb-2 text-center md:text-left">
+                        <h3 class="font-subheading font-black text-2xl sm:text-3xl text-white mb-2 text-center md:text-left">
                             Sabeum Nim Rahmat Minarto S.Sos
                         </h3>
-                        <p class="text-brand-accent font-semibold text-sm mb-6 text-center md:text-left">
+                        <p class="text-brand-accent font-bold text-sm mb-6 text-center md:text-left tracking-wide">
                             Sabuk Hitam (DAN IV Kukkiwon International WT)
                         </p>
 
-                        <!-- DAFTAR SERTIFIKASI (Tinggal tambah/edit tag <li> di bawah) -->
-                        <div class="bg-brand-dark/70 border border-brand-border p-5 rounded-2xl mb-6">
-                            <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wider mb-3 flex items-center gap-2">
-                                <span>📜</span> Catatan Sertifikasi & Lisensi:
+                        <div class="bg-brand-dark border border-brand-border p-6 rounded-2xl mb-6 shadow-inner">
+                            <h4 class="text-xs font-bold text-slate-200 uppercase tracking-widest mb-4 flex items-center gap-2">
+                                <span>📜</span> Catatan Sertifikasi & Lisensi Resmi:
                             </h4>
-                            <ul class="space-y-2 text-xs sm:text-sm text-slate-300">
-                                <li class="flex items-start gap-2">
-                                    <span class="text-brand-red">✦</span>
+                            <ul class="space-y-3 text-xs sm:text-sm text-slate-300 font-medium">
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-brand-red font-bold">✦</span>
                                     <span>Sertifikasi Sabuk Hitam DAN IV Kukkiwon (WT Korea)</span>
                                 </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-brand-red">✦</span>
-                                    <span>Lisensi Pelatih Nasional</span>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-brand-red font-bold">✦</span>
+                                    <span>Lisensi Pelatih Nasional Resmi</span>
                                 </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-brand-red">✦</span>
-                                    <span>Pengalaman Atlet > 10 Tahun Bertanding</span>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-brand-red font-bold">✦</span>
+                                    <span>Pengalaman Atlet > 10 Tahun Bertanding di Berbagai Event</span>
                                 </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-brand-red">✦</span>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-brand-red font-bold">✦</span>
                                     <span>Pengalaman Mengajar > 8 Tahun di Akademi & Sekolah</span>
                                 </li>
                             </ul>
                         </div>
 
-                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed italic text-center md:text-left">
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed italic text-center md:text-left bg-brand-dark/40 p-4 rounded-xl border border-brand-border/40">
                             "Mendidik atlet tidak hanya tentang fisik dan kemenangan di atas matras, tetapi tentang integritas, kerendahan hati, dan mental pantang menyerah."
                         </p>
                     </div>
@@ -282,136 +302,136 @@
         </div>
     </section>
 
-    <!-- 5. RAIHAN PRESTASI -->
-    <section id="prestasi" class="py-20 bg-brand-dark/50 border-t border-brand-border/40">
+    <!-- 5. RAIHAN PRESTASI (Portal Achievement Cards) -->
+    <section id="prestasi" class="py-20 bg-brand-dark border-t border-brand-border/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-xs font-bold text-brand-accent uppercase tracking-widest mb-2">Track Record</h2>
-                <p class="font-heading text-3xl sm:text-4xl font-extrabold text-white">Raihan Prestasi Akademi</p>
+                <span class="text-xs font-bold text-brand-accent uppercase tracking-widest bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/30">Track Record Prestasi</span>
+                <h2 class="font-heading text-4xl sm:text-5xl font-bold text-white tracking-wide mt-3">PENCAPAIAN & MEDALI AKADEMI</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-brand-card border border-brand-border p-6 rounded-2xl flex items-start space-x-4">
-                    <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center flex-shrink-0 font-bold text-xl">
+                <div class="bg-brand-card border border-brand-border p-8 rounded-3xl flex items-start space-x-5 shadow-portal hover:border-amber-500/50 transition">
+                    <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center flex-shrink-0 font-bold text-2xl shadow-inner">
                         🥇
                     </div>
                     <div>
-                        <span class="text-xs text-slate-400 block mb-1">Klub Penyumbang Atlet Peraih Mendali Terbanyak</span>
-                        <h3 class="font-heading font-bold text-lg text-white">PORPROV Kalteng XII 2023</h3>
-                        <p class="text-slate-300 text-sm mt-1">Membawa pulang 1 Medali Emas, 3 Medali Perak dan 2 Mendali Perunggu<br>dalam ajang Porprov Kalteng XII 2023.</p>
+                        <span class="text-xs text-amber-400 font-bold uppercase tracking-wider block mb-1">Klub Penyumbang Atlet Peraih Medali Terbanyak</span>
+                        <h3 class="font-heading font-bold text-2xl text-white tracking-wide">PORPROV Kalteng XII 2023</h3>
+                        <p class="text-slate-300 text-sm mt-2 font-medium leading-relaxed">Membawa pulang 1 Medali Emas, 3 Medali Perak dan 2 Medali Perunggu dalam ajang Porprov Kalteng XII 2023.</p>
                     </div>
                 </div>
 
-                <div class="bg-brand-card border border-brand-border p-6 rounded-2xl flex items-start space-x-4">
-                    <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center flex-shrink-0 font-bold text-xl">
+                <div class="bg-brand-card border border-brand-border p-8 rounded-3xl flex items-start space-x-5 shadow-portal hover:border-amber-500/50 transition">
+                    <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center flex-shrink-0 font-bold text-2xl shadow-inner">
                         🏆
                     </div>
                     <div>
-                        <span class="text-xs text-slate-400 block mb-1">Penyumbang Tunggal Mendali Kalteng </span>
-                        <h3 class="font-heading font-bold text-lg text-white"> POPNAS XVII 2025</h3>
-                        <p class="text-slate-300 text-sm mt-1">Klub Penyumbang Atlet Peraih Mendali Perunggu</p>
+                        <span class="text-xs text-amber-400 font-bold uppercase tracking-wider block mb-1">Penyumbang Tunggal Medali Kalteng</span>
+                        <h3 class="font-heading font-bold text-2xl text-white tracking-wide">POPNAS XVII 2025</h3>
+                        <p class="text-slate-300 text-sm mt-2 font-medium leading-relaxed">Klub Penyumbang Atlet Peraih Medali Perunggu tingkat nasional.</p>
                     </div>
                 </div>
 
-                         <div class="bg-brand-card border border-brand-border p-6 rounded-2xl flex items-start space-x-4">
-                    <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center flex-shrink-0 font-bold text-xl">
+                <div class="bg-brand-card border border-brand-border p-8 rounded-3xl flex items-start space-x-5 shadow-portal hover:border-brand-red/50 transition">
+                    <div class="w-14 h-14 bg-brand-red/10 text-brand-red rounded-2xl flex items-center justify-center flex-shrink-0 font-bold text-2xl shadow-inner">
                         🥋
                     </div>
                     <div>
-                        <span class="text-xs text-slate-400 block mb-1">Open Kejuaraan Taekwondo</span>
-                        <h3 class="font-heading font-bold text-lg text-white">Event Open Daerah Hingga Internasional</h3>
-                        <p class="text-slate-300 text-sm mt-1">Rutin Menggikuti Event Lokal Hingga Internasional.</p>
+                        <span class="text-xs text-brand-red font-bold uppercase tracking-wider block mb-1">Open Kejuaraan Taekwondo</span>
+                        <h3 class="font-heading font-bold text-2xl text-white tracking-wide">Event Open Daerah Hingga Internasional</h3>
+                        <p class="text-slate-300 text-sm mt-2 font-medium leading-relaxed">Rutin mengikuti event kejuaraan lokal hingga kancah internasional secara konsisten.</p>
                     </div>
                 </div>
 
-                         <div class="bg-brand-card border border-brand-border p-6 rounded-2xl flex items-start space-x-4">
-                    <div class="w-12 h-12 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center flex-shrink-0 font-bold text-xl">
+                <div class="bg-brand-card border border-brand-border p-8 rounded-3xl flex items-start space-x-5 shadow-portal hover:border-brand-accent/50 transition">
+                    <div class="w-14 h-14 bg-brand-accent/10 text-brand-accent rounded-2xl flex items-center justify-center flex-shrink-0 font-bold text-2xl shadow-inner">
                         📈
                     </div>
                     <div>
-                        <span class="text-xs text-slate-400 block mb-1">Klub Penyumbang...</span>
-                        <h3 class="font-heading font-bold text-lg text-white">PORPROV Kalteng XIII 2026</h3>
-                        <p class="text-slate-300 text-sm mt-1">On Going...</p>
+                        <span class="text-xs text-brand-accent font-bold uppercase tracking-wider block mb-1">Persiapan Berkelanjutan</span>
+                        <h3 class="font-heading font-bold text-2xl text-white tracking-wide">PORPROV Kalteng XIII 2026</h3>
+                        <p class="text-slate-300 text-sm mt-2 font-medium leading-relaxed">On Going... Persiapan intensif atlet menuju target juara umum berikutnya.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. SEKSI GALERI (REVISI DENGAN SWIPER CAROUSEL/SLIDER) -->
-    <section id="galeri" class="py-20 overflow-hidden">
+    <!-- 6. SEKSI GALERI (Swiper Carousel Slider) -->
+    <section id="galeri" class="py-20 bg-brand-dark/80 border-t border-brand-border/60 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-xs font-bold text-brand-red uppercase tracking-widest mb-2">Dokumentasi</h2>
-                <p class="font-heading text-3xl sm:text-4xl font-extrabold text-white">Galeri Kegiatan Dojang</p>
-                <p class="text-xs text-slate-400 mt-2">Geser (*swipe*) untuk melihat lebih banyak dokumentasi kegiatan</p>
+                <span class="text-xs font-bold text-brand-red uppercase tracking-widest bg-brand-red/10 px-3 py-1 rounded-full border border-brand-red/30">Dokumentasi Dojang</span>
+                <h2 class="font-heading text-4xl sm:text-5xl font-bold text-white tracking-wide mt-3">GALERI KEGIATAN & LATIHAN</h2>
+                <p class="text-xs text-slate-400 mt-2 font-medium">Geser (<span class="text-brand-red font-bold">swipe</span>) untuk melihat lebih banyak dokumentasi kegiatan latihan</p>
             </div>
 
             <!-- Swiper Slider Container -->
-            <div class="swiper galeriSwiper pb-14 px-4">
+            <div class="swiper galeriSwiper pb-14 px-2">
                 <div class="swiper-wrapper">
                     
-                    <!-- Slide Foto 1 (Tambah/Edit src foto Anda di sini) -->
+                    <!-- Slide Foto 1 -->
                     <div class="swiper-slide">
-                        <div class="h-64 sm:h-80 bg-brand-card rounded-2xl border border-brand-border overflow-hidden flex flex-col justify-end p-6 relative group">
-                            <img src="images/LogoKTA.jpeg" class="absolute inset-0 w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent z-10"></div>
+                        <div class="h-72 sm:h-80 bg-brand-card rounded-3xl border border-brand-border overflow-hidden flex flex-col justify-end p-6 relative group shadow-portal">
+                            <img src="images/LogoKTA.jpeg" alt="UKT" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent z-10"></div>
                             <div class="relative z-20">
-                                <span class="bg-brand-red text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">UKT</span>
-                                <h4 class="font-heading font-bold text-white text-lg mt-2">Ujian Kenaikan Tingkat</h4>
-                                <p class="text-xs text-slate-400">Pengujian sabuk periode semester 1</p>
+                                <span class="bg-brand-red text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow">UKT</span>
+                                <h4 class="font-subheading font-bold text-white text-xl mt-3">Ujian Kenaikan Tingkat</h4>
+                                <p class="text-xs text-slate-300 mt-1">Pengujian sabuk periode semester 1 dengan standar Kukkiwon</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Slide Foto 2 -->
                     <div class="swiper-slide">
-                        <div class="h-64 sm:h-80 bg-brand-card rounded-2xl border border-brand-border overflow-hidden flex flex-col justify-end p-6 relative group">
-                            <img src="images/LogoKTA.jpeg" class="absolute inset-0 w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent z-10"></div>
+                        <div class="h-72 sm:h-80 bg-brand-card rounded-3xl border border-brand-border overflow-hidden flex flex-col justify-end p-6 relative group shadow-portal">
+                            <img src="images/LogoKTA.jpeg" alt="Sparring" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent z-10"></div>
                             <div class="relative z-20">
-                                <span class="bg-brand-red text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Sparring</span>
-                                <h4 class="font-heading font-bold text-white text-lg mt-2">Latihan Bersama Kyorugi</h4>
-                                <p class="text-xs text-slate-400">Sesi perkelahian dengan sistem poin digital</p>
+                                <span class="bg-brand-red text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow">Sparring</span>
+                                <h4 class="font-subheading font-bold text-white text-xl mt-3">Latihan Bersama Kyorugi</h4>
+                                <p class="text-xs text-slate-300 mt-1">Sesi pertarungan dengan sistem penilaian sensor poin digital</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Slide Foto 3 -->
                     <div class="swiper-slide">
-                        <div class="h-64 sm:h-80 bg-brand-card rounded-2xl border border-brand-border overflow-hidden flex flex-col justify-end p-6 relative group">
-                            <img src="images/LogoKTA.jpeg" class="absolute inset-0 w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent z-10"></div>
+                        <div class="h-72 sm:h-80 bg-brand-card rounded-3xl border border-brand-border overflow-hidden flex flex-col justify-end p-6 relative group shadow-portal">
+                            <img src="images/LogoKTA.jpeg" alt="Fisik" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent z-10"></div>
                             <div class="relative z-20">
-                                <span class="bg-brand-red text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Fisik</span>
-                                <h4 class="font-heading font-bold text-white text-lg mt-2">Penggemblengan Stamina</h4>
-                                <p class="text-xs text-slate-400">Latihan daya tahan dan kecepatan kaki</p>
+                                <span class="bg-brand-red text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow">Fisik</span>
+                                <h4 class="font-subheading font-bold text-white text-xl mt-3">Penggemblengan Stamina</h4>
+                                <p class="text-xs text-slate-300 mt-1">Latihan penguatan daya tahan fisik dan kecepatan tendangan</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Slide Foto 4 -->
                     <div class="swiper-slide">
-                        <div class="h-64 sm:h-80 bg-brand-card rounded-2xl border border-brand-border overflow-hidden flex flex-col justify-end p-6 relative group">
-                            <img src="images/LogoKTA.jpeg" class="absolute inset-0 w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent z-10"></div>
+                        <div class="h-72 sm:h-80 bg-brand-card rounded-3xl border border-brand-border overflow-hidden flex flex-col justify-end p-6 relative group shadow-portal">
+                            <img src="images/LogoKTA.jpeg" alt="Kejuaraan" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent z-10"></div>
                             <div class="relative z-20">
-                                <span class="bg-brand-accent text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Kejuaraan</span>
-                                <h4 class="font-heading font-bold text-white text-lg mt-2">Penyerahan Medali Juara</h4>
-                                <p class="text-xs text-slate-400">Penyematan medali di kejuaraan daerah</p>
+                                <span class="bg-brand-accent text-brand-dark text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow">Kejuaraan</span>
+                                <h4 class="font-subheading font-bold text-white text-xl mt-3">Penyerahan Medali Juara</h4>
+                                <p class="text-xs text-slate-300 mt-1">Penyematan medali kehormatan di kejuaraan daerah resmi</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Slide Foto 5 (Bisa terus ditambahkan sebanyak yang Anda mau) -->
+                    <!-- Slide Foto 5 -->
                     <div class="swiper-slide">
-                        <div class="h-64 sm:h-80 bg-brand-card rounded-2xl border border-brand-border overflow-hidden flex flex-col justify-end p-6 relative group">
-                            <img src="images/LogoKTA.jpeg" class="absolute inset-0 w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent z-10"></div>
+                        <div class="h-72 sm:h-80 bg-brand-card rounded-3xl border border-brand-border overflow-hidden flex flex-col justify-end p-6 relative group shadow-portal">
+                            <img src="images/LogoKTA.jpeg" alt="Poomsae" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent z-10"></div>
                             <div class="relative z-20">
-                                <span class="bg-brand-red text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Poomsae</span>
-                                <h4 class="font-heading font-bold text-white text-lg mt-2">Pendalaman Jurus Poomsae</h4>
-                                <p class="text-xs text-slate-400">Penyelarasan jurus standar Kukkiwon</p>
+                                <span class="bg-brand-red text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow">Poomsae</span>
+                                <h4 class="font-subheading font-bold text-white text-xl mt-3">Pendalaman Jurus Poomsae</h4>
+                                <p class="text-xs text-slate-300 mt-1">Penyelarasan keindahan gerak dan jurus standar internasional</p>
                             </div>
                         </div>
                     </div>
@@ -426,45 +446,45 @@
         </div>
     </section>
 
-    <!-- 7. KONTAK & LOKASI -->
-    <section id="kontak" class="py-20 bg-brand-dark/80 border-t border-brand-border/40">
+    <!-- 7. KONTAK & LOKASI (Portal Contact Section) -->
+    <section id="kontak" class="py-20 bg-brand-dark border-t border-brand-border/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-xs font-bold text-brand-red uppercase tracking-widest mb-2">Hubungi Kami</h2>
-                    <h3 class="font-heading text-3xl sm:text-4xl font-extrabold text-white mb-6">Bergabunglah Bersama Kobar Taekwondo Academy</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-8">
-                        Punya pertanyaan seputar jadwal latihan, biaya pendaftaran, atau konsultasi program? Tim kami siap melayani Anda.
+                <div class="bg-brand-card border border-brand-border p-8 sm:p-10 rounded-3xl shadow-portal">
+                    <span class="text-xs font-bold text-brand-red uppercase tracking-widest bg-brand-red/10 px-3 py-1 rounded-full border border-brand-red/30">Layanan Informasi</span>
+                    <h2 class="font-heading text-4xl sm:text-5xl font-bold text-white tracking-wide mt-3 mb-4">HUBUNGI KAMI SEKARANG</h2>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-8 font-medium">
+                        Punya pertanyaan seputar jadwal latihan, biaya pendaftaran, atau konsultasi program? Tim sekretariat kami siap melayani Anda.
                     </p>
 
                     <div class="space-y-4 mb-8">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-20 h-10 bg-brand-card border border-brand-border rounded-xl flex items-center justify-center text-brand-red">
+                        <div class="flex items-start space-x-4 bg-brand-dark/60 p-4 rounded-2xl border border-brand-border/60">
+                            <div class="w-12 h-10 bg-brand-card border border-brand-border rounded-xl flex items-center justify-center text-brand-red flex-shrink-0 font-bold">
                                 📍
                             </div>
-                            <span class="text-slate-300 text-sm">Dojang Utama: Lapangan Futsal Prima, 8J6M+93H, Madurejo, Kec. Arut Sel., Kabupaten Kotawaringin Barat, Kalimantan Tengah 74112</span>
+                            <span class="text-slate-300 text-xs sm:text-sm font-medium leading-relaxed">Dojang Utama: Lapangan Futsal Prima, 8J6M+93H, Madurejo, Kec. Arut Sel., Kabupaten Kotawaringin Barat, Kalimantan Tengah 74112</span>
                         </div>
-                        <div class="flex items-center space-x-4">
-                            <div class="w-10 h-10 bg-brand-card border border-brand-border rounded-xl flex items-center justify-center text-emerald-500">
+                        <div class="flex items-center space-x-4 bg-brand-dark/60 p-4 rounded-2xl border border-brand-border/60">
+                            <div class="w-12 h-10 bg-brand-card border border-brand-border rounded-xl flex items-center justify-center text-emerald-500 flex-shrink-0 font-bold">
                                 💬
                             </div>
-                            <span class="text-slate-300 text-sm">WhatsApp Admin: +62 853-8896-8481</span>
+                            <span class="text-slate-300 text-xs sm:text-sm font-semibold">WhatsApp Admin: +62 853-8896-8481</span>
                         </div>
                     </div>
 
-                    <a href="https://wa.me/6285388968481?text=Halo%20Admin%20Kobar%20Taekwondo%20Academy,%20saya%20ingin%20tanya%20informasi%20pendaftaran" target="_blank" class="inline-flex items-center space-x-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-4 rounded-full shadow-lg transition">
-                        <span>Chat via WhatsApp</span>
+                    <a href="https://wa.me/6285388968481?text=Halo%20Admin%20Kobar%20Taekwondo%20Academy,%20saya%20ingin%20tanya%20informasi%20pendaftaran" target="_blank" class="inline-flex items-center space-x-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition tracking-wide w-full justify-center">
+                        <span>💬 Chat Langsung via WhatsApp Admin</span>
                     </a>
                 </div>
 
-                <div class="bg-brand-card border border-brand-border p-8 rounded-3xl shadow-2xl text-center">
-                    <div class="w-16 h-16 bg-brand-red/10 text-brand-red rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                <div class="bg-brand-card border border-brand-border p-8 sm:p-10 rounded-3xl shadow-portal text-center flex flex-col justify-center items-center">
+                    <div class="w-20 h-20 bg-brand-red/10 text-brand-red rounded-3xl flex items-center justify-center mx-auto mb-6 text-3xl font-bold border border-brand-red/30 shadow-inner">
                         📝
                     </div>
-                    <h4 class="font-heading font-bold text-2xl text-white mb-3">Pendaftaran Online</h4>
-                    <p class="text-slate-400 text-sm mb-6">Isi formulir pendaftaran calon anggota baru secara praktis melalui Google Form resmi kami.</p>
-                    <a href="https://forms.gle/contohLinkGoogleForm" target="_blank" class="block w-full bg-brand-red hover:bg-red-700 text-white font-bold py-4 rounded-xl shadow-glow-red transition">
-                        Buka Formulir Pendaftaran
+                    <h3 class="font-heading font-bold text-3xl text-white mb-3 tracking-wide">PENDAFTARAN PORTAL ONLINE</h3>
+                    <p class="text-slate-300 text-sm mb-8 font-medium max-w-md">Isi formulir pendaftaran calon anggota baru secara praktis melalui Google Form resmi kami dengan mengklik tombol di bawah ini.</p>
+                    <a href="https://forms.gle/contohLinkGoogleForm" target="_blank" class="block w-full bg-brand-red hover:bg-red-700 text-white font-black py-4 rounded-xl shadow-glow-red transition tracking-wide text-base">
+                        🚀 BUKA FORMULIR PENDAFTARAN RESMI
                     </a>
                 </div>
             </div>
@@ -472,9 +492,14 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="border-t border-brand-border/60 py-8 bg-brand-dark text-center text-xs text-slate-500">
-        <div class="max-w-7xl mx-auto px-4">
+    <footer class="border-t border-brand-border/80 py-8 bg-brand-dark text-center text-xs text-slate-500 font-medium">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p>© 2026 Kobar Taekwondo Academy. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#beranda" class="hover:text-white transition">Beranda</a>
+                <a href="#program" class="hover:text-white transition">Program</a>
+                <a href="#kontak" class="hover:text-white transition">Kontak</a>
+            </div>
         </div>
     </footer>
 
